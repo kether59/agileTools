@@ -22,7 +22,9 @@
 
     <Toast />
     <WheelOfDecision ref="wheelRef" />
+
   </div>
+
 </template>
 
 <script setup>

@@ -1,22 +1,22 @@
-&lt;template>
-  &lt;div class="wheel-container">
-    &lt;Dialog v-model:visible="visible" modal header="Wheel of Decision" :style="{ width: '50vw' }">
-      &lt;div class="wheel-content">
-        &lt;canvas ref="wheelCanvas" width="400" height="400">&lt;/canvas>
-        &lt;div class="wheel-controls">
-          &lt;Button label="Spin" @click="spinWheel" :disabled="isSpinning" />
-          &lt;Button label="Reset" @click="resetWheel" class="p-button-secondary ml-2" />
-          &lt;div class="mt-3">
-            &lt;span class="font-bold">Selected: &lt;/span>
-            &lt;span>{{ selectedName || 'Spin the wheel!' }}&lt;/span>
-          &lt;/div>
-        &lt;/div>
-      &lt;/div>
-    &lt;/Dialog>
-  &lt;/div>
-&lt;/template>
+<template>
+  <div class="wheel-container">
+    <Dialog v-model:visible="visible" modal header="Wheel of Decision" :style="{ width: '50vw' }">
+      <div class="wheel-content">
+        <canvas ref="wheelCanvas" width="400" height="400"></canvas>
+        <div class="wheel-controls">
+          <Button label="Spin" @click="spinWheel" :disabled="isSpinning" />
+          <Button label="Reset" @click="resetWheel" class="p-button-secondary ml-2" />
+          <div class="mt-3">
+            <span class="font-bold">Selected: </span>
+            <span>{{ selectedName || 'Spin the wheel!' }}</span>
+          </div>
+        </div>
+      </div>
+    </Dialog>
+  </div>
+</template>
 
-&lt;script setup>
+<script setup>
 import { ref, onMounted, watch } from 'vue';
 import { useSocketStore } from '../stores/socket';
 
@@ -146,9 +146,9 @@ watch(() => socketStore.connectedUsers, () => {
 defineExpose({
   show: () => visible.value = true
 });
-&lt;/script>
+</script>
 
-&lt;style scoped>
+<style scoped>
 .wheel-container {
   display: flex;
   flex-direction: column;
@@ -173,4 +173,4 @@ canvas {
   max-width: 100%;
   height: auto;
 }
-&lt;/style>
+</style>
